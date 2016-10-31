@@ -314,22 +314,15 @@ Level.prototype.playerTouched = function(type, actor) {
 
   // if the player touches lava and the player hasn't won
   // Player loses
-  if (type == "lava" && "spike" && this.status == null) {
-    this.status = "lost";
-    this.finishDelay = 1;
-	return type;
-  }
-  else if (type == "coin") {
+  if (type == "spike") {
     this.actors = this.actors.filter(function(other) {
       return other != actor;
     });
-    // If there aren't any coins left, player wins
-    if (!this.actors.some(function(actor) {
-           return actor.type == "coin";
-         })) {
-      this.status = "won";
-      this.finishDelay = 1;
-    }
+  }
+  if (type == "coin") {
+    this.actors = this.actors.filter(function(other) {
+      return other != actor;
+    });
   }
 };
 
