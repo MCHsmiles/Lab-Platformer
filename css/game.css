@@ -1,13 +1,14 @@
-.background    { background: rgb(95, 40, 120);
+.background    { background: rgb(0, 135, 13);
                  table-layout: fixed;
                  border-spacing: 0;   }
 .background td { padding: 0;          }
-.lava          { background: rgb(250, 110, 5); }
-.wall          { background: rgb(200, 5, 135);   }
+.lava          { background: rgb(38, 36, 165); }
+.wall          { background: rgb(99, 71, 18);   }
 
 .actor  { position: absolute;  }
-.player { background: rgb(35, 120, 60); }
-
+.player { background: rgb(234, 170, 51); }
+.coin { background: rgb(241, 229, 89); }
+.spike { background: rgb(0, 0, 0); }
 .game {
   overflow: hidden;
   max-width: 600px;
