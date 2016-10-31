@@ -58,7 +58,7 @@ Coin.prototype.type = 'coin';
 function Spike(pos) {
   this.basePos = this.pos = pos.plus(new Vector(0.5,0.6));
   this.size = new Vector(0.8, 0.8);
-  this.wobble = Math.random() * Math.PI * 2;
+  this.throttle = Math.random() * Math.PI * 2;
 }
 Spike.prototype.type = 'spike';
 
@@ -239,12 +239,12 @@ Coin.prototype.act = function(step) {
   this.pos = this.basePos.plus(new Vector(0, wobblePos));
 };
 
-var wobbleSpeed = 5;
-var wobbleDist = 5;
+var throttleSpeed = 4;
+var throttleDist = 3;
 Spike.prototype.act = function(step) {
-  this.wobble += step * wobbleSpeed;
-  var wobblePos = Math.sin(this.wobble) * wobbleDist;
-  this.pos = this.basePos.plus(new Vector(0, wobblePos));
+  this.throttle += step * throttleSpeed;
+  var throttlePos = Math.sin(this.throttle) * throttleDist;
+  this.pos = this.basePos.plus(new Vector(0, throttlePos));
 };
 
 var maxStep = 0.05;
