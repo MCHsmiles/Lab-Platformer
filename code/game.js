@@ -56,8 +56,8 @@ function Coin(pos) {
 Coin.prototype.type = 'coin';
 
 function Spike(pos) {
-  this.basePos = this.pos = pos.plus(new Vector(0.5,0.6));
-  this.size = new Vector(0.8, 0.8);
+  this.basePos = this.pos = pos.plus(new Vector(0.3,0));
+  this.size = new Vector(0.5, 1.0);
   this.throttle = Math.random() * Math.PI * 2;
 }
 Spike.prototype.type = 'spike';
